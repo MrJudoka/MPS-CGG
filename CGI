@@ -1,0 +1,23 @@
+# Apache service project # 
+# Soon Available #
+# Forwarding only on demands (forking) #
+# Just posted 1/50 of total encrypting so you get a point"
+svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk
+svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x httpd-2.4
+
+<Directory "/home/*/public_html">
+    Options +ExecCGI
+    AddHandler cgi-script .cgi
+</Directory>
+"work-flow/CGI/return_handled"
+{
+ chmod a+x first.pl
+}
+#!/usr/(directory)/(user_allow)
+use strict;
+use warnings;
+
+print "Content-type: text/html\n\n";
+foreach my $key (keys %ENV) {
+    print "$key --> $ENV{$key}<br>";
+}
