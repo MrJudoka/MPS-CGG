@@ -1,0 +1,117 @@
+#Hybrid multi-process, multi-threaded MPM for OS/2MPM
+#mpmt_os2.c#
+#mpm_mpmt_os2_module#
+
+#Create your own (multi-thread first)
+
+&gt;&gt;&gt; import os
+&gt;&gt;&gt; filename, file_extension = os.path.splitext('/path/to/somefile.ext')
+&gt;&gt;&gt; filename
+'/path/to/somefile'
+&gt;&gt;&gt; file_extension
+'.ext'
+
+
+&gt;&gt;&gt; os.path.splitext('/a/b.c/d')
+('/a/b.c/d', '')
+&gt;&gt;&gt; os.path.splitext('.bashrc')
+('.bashrc', '')
+ {
+     {
+        mylist = [a,b,c,d]
+for item in mylist:
+    print item
+
+mydict  = {a:'one', b:'two', c:'three', d:'four'}
+for key in mydict:
+    print key, mydict[key]
+
+
+for i, item in enumerate(mylist):
+    mylist[i] = item**a
+}
+python foo_bar.py &gt; file
+#BoolBroadcast#
+#MPS flush transfer#
+import sys
+
+class Logger(object):
+    def __init__(self):
+        self.terminal = sys.stdout
+        self.log = open(&quot;logfile.log&quot;, &quot;a&quot;)
+   
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)  
+
+    def flush(self):
+        # this flush method is needed for python 3 compatibility.
+        # this handles the flush command by doing nothing.
+        # you might want to specify some extra behavior here.
+        pass    
+
+sys.stdout = Logger()
+
+
+print &quot;Hello&quot;
+
+import json
+from CGGtable import MPSTable
+
+value = ['''
+       {
+           &quot;_id&quot;: {
+               &quot;$Col1&quot;: &quot;XXXXXXX2443&quot;
+           },
+           &quot;col2&quot;: false,
+           &quot;col3&quot;: &quot;359335050111111&quot;,
+           &quot;startedAt&quot;: {
+               &quot;$date&quot;: 1633309625000
+           },
+           &quot;endedAt&quot;: {
+               &quot;$date&quot;: 1633310213000
+           },
+           &quot;col4&quot;: &quot;YYYYYYYYYYYYYYYYYY&quot;,
+           &quot;created_at&quot;: {
+               &quot;$date&quot;: 1633310846935
+           },
+           &quot;updated_at&quot;: {
+               &quot;$date&quot;: 1633310846935
+           },
+           &quot;__v&quot;: 0
+       }''']
+
+dictionary = json.loads(value[0])
+headers = []
+values = []
+for key in dictionary:
+    head = key
+    value = &quot;&quot;
+    if type(dictionary[key]) == type({}):
+        for key2 in dictionary[key]:
+            head += &quot;/&quot; + key2
+            value = dictionary[key][key2]
+            headers.append(head)
+            values.append(value)
+
+    else:
+        value = dictionary[key]
+        headers.append(head)
+        values.append(value)
+
+print(headers)
+print(values)
+myTable = PrettyTable(headers)
+
+myTable.add_row(values)
+print(myTable)
+
+
+['_id/$Col1', 'col2', 'col3', 'startedAt/$date', 'endedAt/$date', 'col4', 'created_at/$date', 'updated_at/$date', '__v']
+['XXXXXXX2443', False, '359335050111111', 1633309625000, 1633310213000, 'YYYYYYYYYYYYYYYYYY', 1633310846935, 1633310846935, 0]
+
++-------------+-------+-----------------+-----------------+---------------+--------------------+------------------+------------------+-----+
+|  _id/$Col1  |  col2 |       col3      | startedAt/$date | endedAt/$date |        col4        | created_at/$date | updated_at/$date | __v |
++-------------+-------+-----------------+-----------------+---------------+--------------------+------------------+------------------+-----+
+| XXXXXXX2443 | False | 359335050111111 |  1633309625000  | 1633310213000 | YYYYYYYYYYYYYYYYYY |  1633310846935   |  1633310846935   |  0  |
++-------------+-------+-----------------+-----------------+---------------+--------------------+------------------+------------------+-----+
